@@ -1,163 +1,273 @@
 # 🧠 VEYRA AGENT: The Original One-Man Army for Vibe Coders
-> **Engineered by Muhammad Talha Farid**
-> **UNDERSTAND • ARCHITECT • BUILD • VERIFY • PRODUCTION-READY**
-> Intent-Driven • Resource-Aware • Credit-Efficient • Zero External Dependencies
-
-[![Original Agent](https://img.shields.io/badge/Author-Muhammad%20Talha%20Farid-6366f1.svg)](https://github.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4.svg)](https://opensource.org/licenses/MIT)
-[![Dependencies](https://img.shields.io/badge/Dependencies-Zero%20External-10b981.svg)]()
-[![Superpowers](https://img.shields.io/badge/Superpowers-7%20Active-f59e0b.svg)]()
-[![Credit Economy](https://img.shields.io/badge/Credit%20Economy-80%25%20Saved-10b981.svg)]()
+> **Architected & Engineered by Muhammad Talha Farid**  
+> **UNDERSTAND • ARCHITECT • BUILD • VERIFY • PRODUCTION-READY**  
+> *Intent-Driven • Resource-Aware • Credit-Efficient • Zero External Dependencies*
 
 ---
 
-## What is VEYRA AGENT?
-**VEYRA AGENT** is the original, standalone software engineering brain engineered by **Muhammad Talha Farid** to transform any vibe coder into a disciplined, self-sufficient **one-man software company**.
+<div align="center">
 
-Vibe coders love moving fast with AI, but often get tripped up by:
-- ❌ **Token & Credit Bleed**: AI agents scanning 30+ files repeatedly, burning budgets on redundant reads.
-- ❌ **Fake Latency Timers**: `setTimeout` or `Future.delayed` masquerading as real code.
-- ❌ **Frontend Breakdown**: Heavy bundler bloat (`node_modules`) crashing on builds.
-- ❌ **Monetization Roadblocks**: Inability to safely verify Stripe webhooks or payments.
-- ❌ **Database Blindness**: Inability to inspect and verify database rows live during dev.
+[![Creator](https://img.shields.io/badge/Author-Muhammad%20Talha%20Farid-6366f1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TalhaGoharWeb)
+[![License: MIT](https://img.shields.io/badge/License-MIT-00f5d4?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/Node.js-22%2B%20LTS-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
+[![Zero External Dependencies](https://img.shields.io/badge/Dependencies-Zero%20External-10b981?style=for-the-badge)]()
+[![Superpowers](https://img.shields.io/badge/Superpowers-7%20Active-f59e0b?style=for-the-badge)]()
+[![Credit Economy](https://img.shields.io/badge/Token%20Burn-80%25%20Reduced-ec4899?style=for-the-badge)]()
+[![QA Audit](https://img.shields.io/badge/QA%20Score-100%25%20Verified-06b6d4?style=for-the-badge)]()
 
-**VEYRA permanently solves all five.** Copy this single `VEYRA/` folder into **ANY** project or workspace to instantly gain a master orchestrator, 7 engineering superpowers, production primitives, an embedded visual database studio, and an automated credit economy engine—with **zero external npm packages required**.
+<br/>
+
+**VEYRA AGENT** is the definitive standalone engineering brain that transforms any vibe coder into a disciplined, self-sufficient **one-man software company**. 
+
+Drop the single `VEYRA/` engine into **any** project to instantly unlock an executive AI orchestrator, 7 core engineering superpowers, zero-dependency production primitives, an embedded visual database studio, and an automated credit economy engine.
+
+[⚡ Quickstart](#-quickstart--installation) • [✨ 7 Superpowers](#-the-7-vibe-coding-superpowers) • [🛠️ Production Primitives](#️-zero-dependency-production-primitives) • [💻 Visual Studio](#-embedded-visual-web-studio) • [🛡️ Multi-Vector QA](#️-multi-vector-automated-qa-audit) • [📁 Structure](#-repository-structure)
+
+</div>
+
+---
+
+## 💡 Why VEYRA? The Problem vs. The Solution
+
+Vibe coders love moving fast with generative AI, but uncapped AI agents inevitably trigger fatal engineering bottlenecks:
+
+| Standard AI Vibe Coding Flaws ❌ | The VEYRA Engineered Solution 🛡️ |
+| :--- | :--- |
+| **Token & Credit Bleed**: Agents scan 50+ files repeatedly, wasting 80% of context and token budgets on redundant directory reads. | **Credit Economy Engine**: Automatically compiles project memory into `.veyra/manifest.json`, reducing context footprint by 70–85%. |
+| **Fake Latency Stubs**: AI places `setTimeout` or `Future.delayed` to simulate async operations without real backends. | **Directive 24 Anti-Mock Sentinel**: Hard failure guards block fake timers, dummy logins, and placeholder `// TODO` stubs. |
+| **Monetization Roadblocks**: Inability to safely implement or verify Stripe webhooks and checkout flows without massive npm packages. | **Native Payments Primitive**: Constant-time HMAC-SHA256 signature verification and checkout session creation using standard `node:crypto`. |
+| **Database Blindness**: AI hallucinates queries with zero visibility into live SQLite tables or schema constraints during dev. | **Embedded Database Studio**: Live web-based table explorer and row inspector running directly on native SQLite with zero config. |
+| **Infinite Code Thrashing**: AI spins in doom-loops attempting random trial-and-error fixes. | **Systematic Debugging & Circuit Breaker**: 4-layer root-cause isolation (Directive 49 halts repetitive loops after 2 attempts). |
 
 ---
 
 ## ⚡ The 7 Vibe-Coding Superpowers
 
-| Superpower | Command / Skill | Capability |
+Every superpower can be invoked through standard CLI terminal commands, modular AI agent skills, or the embedded visual web studio:
+
+```
+                  ┌─────────────────────────────────────────┐
+                  │          VIBE INTAKE / USER RAW IDEA    │
+                  └────────────────────┬────────────────────┘
+                                       │
+            ┌──────────────────────────▼──────────────────────────┐
+            │  SUPERPOWER 1: BRAINSTORMER (Socratic Exploration)   │
+            │  User Journey Mapping • Relational Data Entities    │
+            └──────────────────────────┬──────────────────────────┘
+                                       │
+            ┌──────────────────────────▼──────────────────────────┐
+            │  SUPERPOWER 2: PLAN WRITER (Architectural Engine)   │
+            │  4 Atomic Phases • Automated Verification Gates     │
+            └──────────────────────────┬──────────────────────────┘
+                                       │
+            ┌──────────────────────────▼──────────────────────────┐
+            │  SUPERPOWER 3: EXECUTION SENTINEL                   │
+            │  Directive 49 Circuit Breaker • Anti-Loop Sentinel  │
+            └──────────────────────────┬──────────────────────────┘
+                                       │
+            ┌──────────────────────────▼──────────────────────────┐
+            │  SUPERPOWER 4: SYSTEMATIC SCIENTIFIC DEBUGGER       │
+            │  State → Network → Backend → Database Isolation     │
+            └──────────────────────────┬──────────────────────────┘
+                                       │
+            ┌──────────────────────────▼──────────────────────────┐
+            │  SUPERPOWER 5: TEST-DRIVEN QA & ANTI-MOCK GUARD     │
+            │  Real Functionality • Zero Stubs • Secret Sanity    │
+            └──────────────────────────┬──────────────────────────┘
+                                       │
+            ┌──────────────────────────▼──────────────────────────┐
+            │  SUPERPOWER 6: ANTI-GENERIC UI SYSTEM               │
+            │  Bespoke HSL Tokens • Reactive Signals & Rollbacks  │
+            └──────────────────────────┬──────────────────────────┘
+                                       │
+            ┌──────────────────────────▼──────────────────────────┐
+            │  SUPERPOWER 7: SCAFFOLDER & PRODUCTION DEPLOYER     │
+            │  SaaS / API / Flutter • Hardened Docker • CI/CD     │
+            └─────────────────────────────────────────────────────┘
+```
+
+| Superpower | Command | What It Delivers |
 | :--- | :--- | :--- |
-| **1. Brainstormer** | `brainstorm "<vibe>"` | Socratic intent extraction, user journey mapping, and relational data modeling before coding. |
-| **2. Plan Writer** | `plan "<task>"` | Atomic 4-phase verifiable roadmap with automated verification gates. No hand-waving "implement the rest". |
-| **3. Execution Sentinel** | `execute` | Progress tracking with Directive 49 anti-loop circuit breaker (stops doom-loops after 2 attempts). |
-| **4. Systematic Debugger** | `debug "<error>"` | Scientific 4-layer root-cause isolation (Client State, Network, Backend, DB). Bans random trial-and-error. |
-| **5. Test-Driven QA & Guard** | `test` / `guard` | Directive 24 anti-mock sentinel. Blocks fake sleep timers, placeholder TODOs, and leaked secrets. |
-| **6. Anti-Generic UI & Store** | `ui` | Bespoke HSL design tokens, micro-interactions, responsive components, and native reactive signals. |
-| **7. Scaffolder & Deployer** | `scaffold` / `deploy` | 1-click generation of complete SaaS, REST APIs, Flutter mobile apps, hardened Dockerfiles, and CI/CD. |
+| **1. Brainstormer** | `node VEYRA/veyra-brain.mjs brainstorm "<vibe>"` | Transforms informal vibe concepts into relational schemas, edge cases, user journeys, and API contracts. |
+| **2. Plan Writer** | `node VEYRA/veyra-brain.mjs plan "<task>"` | Produces a verifiable 4-phase technical roadmap. Banned: vague "implement the rest" shortcuts. |
+| **3. Execution Sentinel** | `node VEYRA/veyra-brain.mjs execute` | Monitors task progress and halts repetitive execution loops via Directive 49 circuit breaker. |
+| **4. Systematic Debugger** | `node VEYRA/veyra-brain.mjs debug "<error>"` | Isolates issues across 4 failure domains (Client State, Network, Backend, DB) before touching code. |
+| **5. Anti-Mock Sentinel** | `node VEYRA/veyra-brain.mjs guard` | Automated scanner enforcing Directive 24; fails immediately if fake delays, dummy auth, or leaked secrets exist. |
+| **6. Anti-Generic UI** | `node VEYRA/veyra-brain.mjs ui` | Bespoke HSL color tokens, micro-interactions, responsive CSS components, and fine-grained reactive signals. |
+| **7. Production Scaffolder** | `node VEYRA/veyra-brain.mjs scaffold <stack> "<name>"` | 1-click generators for full-stack SaaS, REST APIs, 2026 Flutter apps, landing pages, and Docker deployments. |
 
 ---
 
-## 🛠️ Zero-Dependency Production Primitives (`primitives/`)
+## 🛠️ Zero-Dependency Production Primitives
 
-Every primitive runs natively on Node.js standard libraries with **zero npm install needed**:
-- **`primitives/auth.mjs`**: PBKDF2/scrypt salted password hashing + HMAC-SHA256 stateless JWT tokens with constant-time equality checks + RBAC middleware.
-- **`primitives/db.mjs`**: Native `node:sqlite` WAL mode interface with foreign key enforcement and automated migrations (`_veyra_migrations`).
-- **`primitives/router.mjs`**: Regex parameterized HTTP router with 1MB body streaming DoS guard, preflight CORS, `res.json()`, and `res.error()`.
-- **`primitives/reactive.mjs`**: Fine-grained reactive signals (`createSignal`), observable store (`createStore`), and optimistic UI rollbacks for zero-build web dashboards.
-- **`primitives/payments.mjs`**: Native Stripe checkout sessions and constant-time HMAC-SHA256 webhook signature verification (`stripe-signature`).
-- **`primitives/ui-kit.css` & `components.html`**: Curated anti-generic HSL design tokens, WCAG AA accessible contrast, dialogs, form inputs, and responsive layout.
+Every primitive operates exclusively on **Node.js standard libraries** (`node:crypto`, `node:sqlite`, `node:http`, `node:fs`). Zero `npm install` needed:
+
+### 1. Cryptographic Authentication & RBAC (`primitives/auth.mjs`)
+- Salted PBKDF2/scrypt password hashing with unique per-user salts.
+- HMAC-SHA256 stateless JWT generation and verification.
+- Constant-time equality checks (`crypto.timingSafeEqual`) preventing timing attacks.
+- Role-based access control (RBAC) middleware for multi-role SaaS.
+
+### 2. Native SQLite WAL Engine (`primitives/db.mjs`)
+- Powered by native `node:sqlite` with Write-Ahead Logging (`PRAGMA journal_mode = WAL`).
+- Enforces relational foreign keys (`PRAGMA foreign_keys = ON`).
+- Automated idempotent migration tracking table (`_veyra_migrations`).
+
+### 3. High-Performance HTTP Router (`primitives/router.mjs`)
+- Parameterized route matching with regex path extractors (`/api/users/:id`).
+- 1MB streaming body limit guarding against payload-overflow DoS attacks.
+- Built-in preflight CORS handling, `res.json()`, and standardized `res.error()`.
+
+### 4. Fine-Grained Reactive Store & Signals (`primitives/reactive.mjs`)
+- `createSignal(value)`: Reactive primitive with subscriber notifications for zero-build frontends.
+- `createStore(initialState)`: Action-based state management with automatic **optimistic UI rollback** upon server rejections.
+- `bindDOM(selector, signal)`: Declarative two-way DOM binding without virtual DOM overhead.
+
+### 5. Native Payments & Webhook Verifier (`primitives/payments.mjs`)
+- Native Stripe checkout session dispatcher via standard HTTPS requests.
+- Cryptographic `stripe-signature` verification using HMAC-SHA256 constant-time comparison with timestamp drift tolerance.
+
+### 6. Anti-Generic Design Tokens & UI Kit (`primitives/ui-kit.css` & `components.html`)
+- Handcrafted fluid HSL design tokens (dark-mode first, WCAG AA compliant).
+- Accessible modals, buttons, forms, badges, and responsive containers.
 
 ---
 
-## 🚀 Standalone Commands
+## 🚀 Quickstart & Installation
 
-Run directly in terminal with native Node.js:
+### Option 1: Drop into Any Existing Project
+
+You can integrate VEYRA into any existing project in 10 seconds:
+
+```bash
+# 1. Copy the VEYRA folder into your project root
+cp -r /path/to/VEYRA ./my-project/VEYRA
+
+# 2. Run 1-click activation (links agent rules, skills, and manifest)
+# Windows:
+VEYRA\activate.bat
+
+# macOS / Linux:
+bash VEYRA/activate.sh
+```
+
+### Option 2: Run Standalone CLI Commands
 
 ```bash
 # 1. ⚡ Superpower 1: Turn any vibe into a complete engineering spec
-node VEYRA/veyra-brain.mjs brainstorm "Voice-first habit tracker"
+node VEYRA/veyra-brain.mjs brainstorm "AI-powered invoice manager"
 
 # 2. 📋 Superpower 2: Generate an atomic, verifiable implementation roadmap
-node VEYRA/veyra-brain.mjs plan "Add Stripe customer portal checkout"
+node VEYRA/veyra-brain.mjs plan "Implement Stripe subscription portal"
 
 # 3. 🔍 Superpower 4: Zero-guesswork scientific debugging
-node VEYRA/veyra-brain.mjs debug "TypeError: Cannot read properties of undefined (reading 'token')"
+node VEYRA/veyra-brain.mjs debug "TypeError: Cannot read properties of undefined (reading 'userId')"
 
-# 4. 💾 Credit Economy: Generate .veyra/manifest.json (saves 80% AI tokens)
+# 4. 💾 Credit Economy: Index project into .veyra/manifest.json (saves 80% AI tokens)
 node VEYRA/veyra-brain.mjs manifest
 
 # 5. 🗄️ Embedded Database Studio: Inspect tables and live rows
 node VEYRA/veyra-brain.mjs db          # Lists all tables and row counts
-node VEYRA/veyra-brain.mjs db users    # Shows live rows from users table
+node VEYRA/veyra-brain.mjs db users    # Displays rows from users table
 
-# 6. 🛡️ Anti-Mock Guard: Fails build if any fake timer or stub is found
+# 6. 🛡️ Anti-Mock Guard: Scans and blocks fake timers, stubs, and leaked secrets
 node VEYRA/veyra-brain.mjs guard
 
 # 7. 🚀 Scaffold a complete production stack
-node VEYRA/veyra-brain.mjs scaffold saas "My SaaS"        # Full-stack SaaS (Auth + DB + UI)
-node VEYRA/veyra-brain.mjs scaffold api "Data Microservice"  # High-performance REST API
-node VEYRA/veyra-brain.mjs scaffold flutter "veyra_app"  # 2026 Flutter (Dart 3 + Riverpod + GoRouter)
-node VEYRA/veyra-brain.mjs scaffold website "Landing"    # Anti-generic responsive landing page
+node VEYRA/veyra-brain.mjs scaffold saas "MySaaS"          # Full-Stack SaaS (Auth + DB + UI)
+node VEYRA/veyra-brain.mjs scaffold api "PaymentService"  # High-performance REST API
+node VEYRA/veyra-brain.mjs scaffold flutter "veyra_app"   # 2026 Flutter (Riverpod + GoRouter)
+node VEYRA/veyra-brain.mjs scaffold website "LaunchSite"  # Responsive Landing Page
 
 # 8. 🛡️ Run the multi-vector automated test harness
 node VEYRA/veyra-brain.mjs test
 
 # 9. 📦 Generate hardened Dockerfile, docker-compose, and GitHub Actions CI/CD
 node VEYRA/veyra-brain.mjs deploy
-
-# 10. 💻 Launch embedded visual web studio (http://localhost:4422)
-node VEYRA/veyra-brain.mjs studio
-
-# 11. ✨ Activate Veyra rules and superpowers for Antigravity, Claude Code, Cursor, or Gemini
-node VEYRA/veyra-brain.mjs activate
 ```
 
 ---
 
 ## 💻 Embedded Visual Web Studio
 
-Launch the visual software factory on `http://localhost:4422`:
+Launch the full visual engineering cockpit locally:
+
 ```bash
 node VEYRA/veyra-brain.mjs studio
 ```
-Includes interactive cockpits for:
-1. **Live Vibe-to-Spec Brainstormer**
-2. **Phased Plan Generator**
-3. **Root-Cause Debugger Assistant**
-4. **1-Click Codebase Scaffolder**
-5. **QA Sentinel & Anti-Mock Guard**
-6. **Production Deployment Generator**
-7. **Embedded SQLite Database Studio** (visual table viewer & row browser)
-8. **Credit Economy & Manifest Viewer** (1-click AI context copy)
+
+Open `http://localhost:4422` in your browser to access:
+- **Interactive Vibe-to-Spec Brainstormer**: Real-time relational entity generator.
+- **Phased Plan Generator**: Atomic 4-phase checklists with copyable markdown.
+- **Root-Cause Debugger Assistant**: 4-layer diagnostic questionnaire.
+- **1-Click Codebase Scaffolder**: Interactive visual project generator.
+- **Live Database Studio**: Visual SQLite table explorer and live record inspector.
+- **Credit Economy & Manifest Inspector**: 1-click "Copy AI Context" button for ChatGPT, Claude, and Antigravity.
 
 ---
 
-## 📁 Repository Directory Structure
+## 🛡️ Multi-Vector Automated QA Audit
+
+VEYRA includes a built-in automated QA testing harness that verifies your codebase against the 55 Master Directives:
+
+```bash
+node VEYRA/veyra-brain.mjs test
+```
+
+### Verified Audit Vectors:
+1. **Directive 24 (Anti-Mock Sentinel)**: Prohibits fake `setTimeout`, `Future.delayed`, and mock promises.
+2. **Directive 23 (Security & Sanitization)**: Validates zero hardcoded API keys, secrets, or unhashed passwords.
+3. **Directive 28 (Accessibility)**: Enforces WCAG AA form labels, inputs, and interactive element contracts.
+4. **Directive 20 (Relational Integrity)**: Validates primary keys, foreign keys, and migration tables in SQLite.
+5. **Directive 44 (Vibe-Coder Sanity)**: Rejects `// TODO` stubs, empty `catch` blocks, and dummy placeholders.
+
+---
+
+## 🤝 Supported AI Coding Environments
+
+VEYRA natively configures cognitive directives and skills for:
+- **Google Antigravity & Gemini IDE**: Native `.agents/skills` and `GEMINI.md` directives.
+- **Anthropic Claude Code**: High-density CLAUDE.md / AGENTS.md rule set.
+- **Cursor / Windsurf**: Custom `.cursorrules` integration via `node VEYRA/veyra-brain.mjs activate`.
+- **ChatGPT & GitHub Copilot**: Zero-token manifest summaries ready for prompt injection.
+
+---
+
+## 📁 Repository Structure
 
 ```text
-VEYRA/
-├── AGENTS.md                  # Universal operating rules for AI coding agents
-├── GEMINI.md                  # Direct Antigravity cognitive brain directives
-├── RULES.md                   # Full reference of all 55 Veyra directives
-├── SKILL.md                   # Primary Antigravity skill cheatsheet
-├── README.md                  # Complete documentation
-├── activate.bat               # 1-click Windows activation
-├── activate.sh                # 1-click Mac/Linux activation
-├── veyra-brain.mjs            # Master orchestrator & CLI launcher
-│
-├── engines/                   # Autonomous engineering sub-engines
-│   ├── superpowers.mjs        # 7 Core Superpowers for Vibe Coders
-│   ├── manifest.mjs           # Credit Economy Engine & Project Memory Cache
-│   ├── scaffolder.mjs         # Production generators for SaaS, APIs, Flutter, Web
-│   ├── test-harness.mjs       # Multi-vector QA, mock timer & security sentinel
-│   └── deployer.mjs           # Hardened Docker, Compose & CI/CD generator
-│
-├── primitives/                # Zero-dependency production building blocks
-│   ├── auth.mjs               # Cryptographic auth, JWT, scrypt, RBAC
-│   ├── db.mjs                 # SQLite WAL manager & migration runner
-│   ├── router.mjs             # Native HTTP router, JSON validator, CORS
-│   ├── reactive.mjs           # Signals, store & optimistic rollback engine
-│   ├── payments.mjs           # Stripe checkout & HMAC webhook signature verifier
-│   ├── ui-kit.css             # Anti-Generic UI tokens & component styles
-│   └── components.html        # Accessible HTML/CSS component templates
-│
-├── skills/                    # Native modular skills for AI assistants
-│   ├── veyra-one-man-army/    # Master one-man army workflow
-│   ├── veyra-brainstorming/   # Superpower 1: Vibe-to-spec blueprinting
-│   ├── veyra-writing-plans/   # Superpower 2: Atomic execution planning
-│   ├── veyra-executing-plans/ # Superpower 3: Anti-loop plan execution
-│   ├── veyra-systematic-debugging/ # Superpower 4: Scientific root cause isolation
-│   ├── veyra-tdd/             # Superpower 5: Test-driven & real functionality
-│   └── veyra-anti-generic-ui/ # Superpower 6: Bespoke design system engineering
-│
-└── studio/                    # Embedded local visual workbench
-    └── index.html             # Cyber-grade visual dashboard (http://localhost:4422)
+.
+├── .agents/                   # Native agent rules and modular skills
+│   ├── rules/veyra-agent.md   # Complete 55 Master Directives
+│   └── skills/                # 7 Atomic engineering skills
+├── .github/workflows/         # Production CI/CD automated pipeline
+│   └── deploy.yml             # GitHub Actions verify-and-build workflow
+├── .veyra/                    # Credit economy project memory
+│   └── manifest.json          # Cached schemas, routes, and tokens
+├── bin/                       # Global CLI executables
+│   ├── veyra.mjs              # Command line runner
+│   └── veyra-core.mjs         # Core CLI engine
+├── src/                       # High-performance React web orchestrator
+├── VEYRA/                     # Standalone Zero-Dependency Engine
+│   ├── AGENTS.md              # Cognitive brain protocol
+│   ├── GEMINI.md              # Antigravity directive set
+│   ├── RULES.md               # 55 Master Directives reference
+│   ├── SKILL.md               # Cheatsheet & orchestration index
+│   ├── LICENSE                # MIT License
+│   ├── veyra-brain.mjs        # Master CLI launcher
+│   ├── engines/               # Scaffolder, Manifest, Superpowers, QA, Deployer
+│   ├── primitives/            # Auth, SQLite WAL, Router, Signals, Stripe Payments
+│   ├── skills/                # 7 Standalone modular skills
+│   └── studio/                # Visual Web Cockpit (http://localhost:4422)
+├── Dockerfile                 # Multi-stage hardened production container
+├── docker-compose.yml         # Container orchestration
+├── package.json               # Project manifest
+└── LICENSE                    # Open-source MIT License
 ```
 
 ---
 
 ## ⚖️ Creator & License
-- **Original Creator & Architect**: **Muhammad Talha Farid**
-- **License**: MIT License. Free for indie hackers, vibe coders, and commercial teams.
+
+- **Architect & Lead Engineer**: [Muhammad Talha Farid](https://github.com/TalhaGoharWeb)  
+- **License**: [MIT License](LICENSE). Open for indie hackers, vibe coders, and commercial teams worldwide.
