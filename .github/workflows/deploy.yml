@@ -1,0 +1,25 @@
+name: Veyra Production CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  verify-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+
+    - name: Run Veyra Multi-Vector Quality & Security Audit
+      run: node VEYRA/veyra-brain.mjs test
+
+    - name: Build Production Docker Image
+      run: docker build -t test-app:latest .

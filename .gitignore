@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production / Build output
+dist/
+build/
+out/
+
+# Environment variables & local secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# SQLite local databases and write-ahead logs
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.db
+*.db-journal
+*.db-wal
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary archives & backups
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.bak
+*.tmp

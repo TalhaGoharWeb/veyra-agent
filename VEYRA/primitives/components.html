@@ -1,0 +1,60 @@
+<!--
+  VEYRA PRODUCTION PRIMITIVE: ACCESSIBLE HTML COMPONENTS
+  Ready-to-use snippets engineered for density, clarity, and accessibility.
+-->
+
+<!-- 1. Header / Navbar -->
+<header style="border-bottom: 1px solid var(--border-subtle); padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; background: var(--bg-surface);">
+  <div style="display: flex; align-items: center; gap: 0.75rem;">
+    <span style="font-weight: 800; font-family: var(--font-mono); font-size: 1.125rem; color: var(--color-primary);">APP_NAME</span>
+    <span class="badge badge-success">● SYSTEM HEALTHY</span>
+  </div>
+  <nav style="display: flex; align-items: center; gap: 1rem;">
+    <button class="btn btn-secondary" id="btn-refresh">Refresh</button>
+    <button class="btn btn-primary" id="btn-action">+ New Item</button>
+  </nav>
+</header>
+
+<!-- 2. Metrics / KPI Grid -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+  <div class="card">
+    <span style="font-size: 0.75rem; text-transform: uppercase; font-family: var(--font-mono); color: var(--text-muted);">Active Records</span>
+    <div style="font-size: 1.75rem; font-weight: 800; font-family: var(--font-mono); color: var(--text-primary); margin-top: 0.25rem;">1,420</div>
+  </div>
+  <div class="card">
+    <span style="font-size: 0.75rem; text-transform: uppercase; font-family: var(--font-mono); color: var(--text-muted);">Average Latency</span>
+    <div style="font-size: 1.75rem; font-weight: 800; font-family: var(--font-mono); color: var(--color-accent); margin-top: 0.25rem;">14ms</div>
+  </div>
+  <div class="card">
+    <span style="font-size: 0.75rem; text-transform: uppercase; font-family: var(--font-mono); color: var(--text-muted);">Error Rate</span>
+    <div style="font-size: 1.75rem; font-weight: 800; font-family: var(--font-mono); color: var(--color-success); margin-top: 0.25rem;">0.00%</div>
+  </div>
+</div>
+
+<!-- 3. Form Input with Validation -->
+<form id="record-form" class="card" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+  <h3 style="font-size: 1rem;">Create Entity Record</h3>
+  <div>
+    <label for="input-title" style="display: block; font-size: 0.75rem; text-transform: uppercase; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 0.25rem;">Title</label>
+    <input type="text" id="input-title" class="input" placeholder="e.g. Production Cluster 01" required />
+  </div>
+  <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Save Record</button>
+</form>
+
+<!-- 4. Table Structure -->
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Updated</th>
+        <th style="text-align: right;">Action</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <!-- Dynamic Rows Injected Here -->
+    </tbody>
+  </table>
+</div>

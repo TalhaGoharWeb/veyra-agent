@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VEYRA AGENT • The Original One-Man Army for Vibe Coders</title>
+  <style>
+    :root {
+      --bg: #07090e;
+      --surface: #0f1422;
+      --surface-elevated: #161d31;
+      --surface-hover: #1c253d;
+      --border: #1e2945;
+      --border-accent: rgba(99, 102, 241, 0.4);
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.25);
+      --accent: #00f5d4;
+      --accent-glow: rgba(0, 245, 212, 0.2);
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    /* Top Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .brand-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .brand-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: var(--primary-glow);
+      color: #a5b4fc;
+      border: 1px solid var(--border-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .author-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+    .author-tag span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--success);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 8px var(--success);
+    }
+
+    /* Tabs Bar */
+    .tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      color: var(--text);
+      background: var(--surface);
+    }
+    .tab-btn.active {
+      color: #fff;
+      background: var(--surface-elevated);
+      border-color: var(--border-accent);
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+
+    /* Cards & Layout */
+    .view-panel {
+      display: none;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+    .view-panel.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 860px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      position: relative;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Inputs & Buttons */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .textarea, .input, .select {
+      width: 100%;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      padding: 0.75rem;
+      font-size: 0.875rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .textarea:focus, .input:focus, .select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px var(--primary-glow);
+    }
+    .textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      background: var(--primary);
+      color: #fff;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--surface-elevated);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      background: var(--surface-hover);
+      border-color: var(--text-subtle);
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: #07090e;
+      font-weight: 700;
+    }
+    .btn-accent:hover {
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+
+    /* Output Pre & Boxes */
+    .output-box {
+      background: #04060a;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #e2e8f0;
+      max-height: 380px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+
+    /* Interactive Data Grid */
+    .data-table-container {
+      overflow-x: auto;
+      max-height: 340px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: #04060a;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      text-align: left;
+    }
+    .data-table th, .data-table td {
+      padding: 0.6rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .data-table th {
+      background: var(--surface-elevated);
+      color: #a5b4fc;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    .data-table tr:hover {
+      background: rgba(99, 102, 241, 0.05);
+    }
+
+    /* Terminal */
+    .terminal-container {
+      margin-top: 2rem;
+    }
+    .terminal-header {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-bottom: none;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .terminal-body {
+      background: #030508;
+      border: 1px solid var(--border);
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+      padding: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #38bdf8;
+      max-height: 160px;
+      overflow-y: auto;
+    }
+
+    .badge-pill {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: var(--surface-elevated);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div>
+        <div class="brand-title">
+          <span style="color: var(--primary);">VEYRA</span> AGENT
+          <span class="brand-badge">Original One-Man Army</span>
+        </div>
+        <p class="author-tag">Engineered by <span>Muhammad Talha Farid</span> • Directives 1-55 Compliant</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span class="status-pill"><span class="status-dot"></span> STUDIO ACTIVE (4422)</span>
+        <span class="badge-pill">Zero External Dependencies</span>
+      </div>
+    </header>
+
+    <!-- Superpower Navigation Tabs -->
+    <nav class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('brainstorm')">⚡ 1. Brainstormer</button>
+      <button class="tab-btn" onclick="switchTab('plan')">📋 2. Plan Engine</button>
+      <button class="tab-btn" onclick="switchTab('debug')">🔍 3. Debugger</button>
+      <button class="tab-btn" onclick="switchTab('scaffold')">🚀 4. Scaffolder</button>
+      <button class="tab-btn" onclick="switchTab('audit')">🛡️ 5. QA & Guard</button>
+      <button class="tab-btn" onclick="switchTab('deploy')">📦 6. Deployment</button>
+      <button class="tab-btn" onclick="switchTab('db')">🗄️ 7. DB Studio</button>
+      <button class="tab-btn" onclick="switchTab('manifest')">💾 8. Credit Economy</button>
+    </nav>
+
+    <!-- Panel 1: Brainstormer -->
+    <section id="panel-brainstorm" class="view-panel active">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">⚡ Superpower 1: Vibe-to-Spec Brainstormer</h2>
+            <span class="badge-pill">Socratic Intent</span>
+          </div>
+          <p class="card-desc">Transform raw vibes into an engineering blueprint before touching code.</p>
+          
+          <div class="form-group">
+            <label class="form-label" for="vibe-input">What are you building? (The Vibe)</label>
+            <textarea id="vibe-input" class="textarea" placeholder="e.g. A voice-first habit tracker that creates daily streaks and writes to SQLite..."></textarea>
+          </div>
+          <button onclick="runBrainstorm()" class="btn btn-accent">Generate Architecture & Spec</button>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Architectural Spec Output</h2>
+            <button onclick="copyOutput('brainstorm-output')" class="btn btn-secondary" style="padding: 0.3rem 0.7rem; font-size: 0.75rem;">Copy Spec</button>
+          </div>
+          <div id="brainstorm-output" class="output-box">Input your vibe concept on the left and click "Generate Architecture & Spec".</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 2: Plan Engine -->
+    <section id="panel-plan" class="view-panel">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">📋 Superpower 2: Architectural Plan Engine</h2>
+            <span class="badge-pill">Directive 42</span>
+          </div>
+          <p class="card-desc">Generate atomic, phased implementation tasks with automated verification criteria.</p>
+          
+          <div class="form-group">
+            <label class="form-label" for="plan-input">Feature or System to Plan</label>
+            <textarea id="plan-input" class="textarea" placeholder="e.g. Implement user authentication with cryptographic password hashing and session tokens..."></textarea>
+          </div>
+          <button onclick="runPlan()" class="btn">Generate Phased Execution Plan</button>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Phased Execution Roadmap</h2>
+            <button onclick="copyOutput('plan-output')" class="btn btn-secondary" style="padding: 0.3rem 0.7rem; font-size: 0.75rem;">Copy Plan</button>
+          </div>
+          <div id="plan-output" class="output-box">Phased execution plan will appear here with verification gates.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 3: Systematic Debugger -->
+    <section id="panel-debug" class="view-panel">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">🔍 Superpower 4: Zero-Guesswork Debugger</h2>
+            <span class="badge-pill">Scientific Root Cause</span>
+          </div>
+          <p class="card-desc">Isolate faults across Client State, Network, Backend, and DB without code thrashing.</p>
+          
+          <div class="form-group">
+            <label class="form-label" for="debug-input">Error Message, Stack Trace, or Bug Symptom</label>
+            <textarea id="debug-input" class="textarea" placeholder="e.g. TypeError: Cannot read properties of undefined (reading 'token') or 401 Unauthorized on refresh..."></textarea>
+          </div>
+          <button onclick="runDebug()" class="btn btn-accent">Isolate Root Cause & Remedy</button>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Diagnostic Isolation Protocol</h2>
+            <button onclick="copyOutput('debug-output')" class="btn btn-secondary" style="padding: 0.3rem 0.7rem; font-size: 0.75rem;">Copy Diagnostics</button>
+          </div>
+          <div id="debug-output" class="output-box">Paste error details to get structured root-cause isolation and minimal surgical remedies.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 4: Autonomous Scaffolder -->
+    <section id="panel-scaffold" class="view-panel">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">🚀 Superpower 7: Autonomous Scaffolder</h2>
+            <span class="badge-pill">100% Production Ready</span>
+          </div>
+          <p class="card-desc">Generate zero-dependency, verified full-stack codebases directly into this project.</p>
+          
+          <div class="form-group">
+            <label class="form-label" for="scaffold-name">Project / App Name</label>
+            <input id="scaffold-name" class="input" value="Veyra SaaS App" />
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <button onclick="triggerScaffold('saas')" class="btn">Scaffold Full-Stack SaaS (Auth + DB + UI)</button>
+            <button onclick="triggerScaffold('api')" class="btn btn-secondary">Scaffold Production REST API Microservice</button>
+            <button onclick="triggerScaffold('flutter')" class="btn btn-secondary">Scaffold 2026 Flutter Mobile App (Dart 3 + Riverpod)</button>
+            <button onclick="triggerScaffold('website')" class="btn btn-secondary">Scaffold Anti-Generic Responsive Landing Page</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Scaffolding Status</h2>
+          </div>
+          <div id="scaffold-result" class="output-box">Ready to scaffold. Click any template on the left.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 5: QA & Guard -->
+    <section id="panel-audit" class="view-panel">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">🛡️ Superpower 5: QA & Directive Sentinel</h2>
+            <span class="badge-pill">Directives 24, 23 & 44</span>
+          </div>
+          <p class="card-desc">Audit source files for fake sleep timers, leaked secrets, accessibility, and TODO stubs.</p>
+          
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+            <button onclick="runAudit()" class="btn">Run Full Multi-Vector QA</button>
+            <button onclick="runReview()" class="btn btn-secondary">Run Directive Review</button>
+            <button onclick="runGuard()" class="btn btn-accent">Run Anti-Mock Guard</button>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">
+            Bans `setTimeout` / `Future.delayed` fake latency stubs and enforces genuine persistence.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Audit & Sentinel Results</h2>
+          </div>
+          <div id="audit-output" class="output-box">Click any audit action on the left to scan.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 6: Deployment -->
+    <section id="panel-deploy" class="view-panel">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">📦 Superpower 7: Production Deployment</h2>
+            <span class="badge-pill">Zero Config</span>
+          </div>
+          <p class="card-desc">Generate hardened multi-stage Dockerfile, docker-compose.yml, and GitHub Actions CI/CD.</p>
+          
+          <button onclick="triggerDeploy()" class="btn btn-accent">Generate Deployment Manifests</button>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Deployment Manifest Status</h2>
+          </div>
+          <div id="deploy-result" class="output-box">Click button on left to generate deployment configuration.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 7: Database Studio -->
+    <section id="panel-db" class="view-panel">
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <h2 class="card-title">🗄️ Veyra Embedded Database Studio</h2>
+          <button onclick="loadDbTables()" class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.8rem;">Refresh Tables</button>
+        </div>
+        <p class="card-desc">Inspect native SQLite tables, schemas, and live rows without external software.</p>
+
+        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+          <label class="form-label" style="margin: 0;" for="db-table-select">Select Table:</label>
+          <select id="db-table-select" class="select" style="max-width: 300px;" onchange="loadTableRows(this.value)">
+            <option value="">-- Select a table --</option>
+          </select>
+          <span id="db-info" style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono);"></span>
+        </div>
+
+        <div class="data-table-container">
+          <table class="data-table" id="db-table-view">
+            <thead><tr><th>Columns</th></tr></thead>
+            <tbody><tr><td>Select a table above to view live records.</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 8: Credit Economy & Manifest -->
+    <section id="panel-manifest" class="view-panel">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">💾 Credit Economy: Project Memory Snapshot</h2>
+            <span class="badge-pill">Saves ~80% Tokens</span>
+          </div>
+          <p class="card-desc">Snapshot of tables, endpoints, and primitives. AI reads this instead of 30 files.</p>
+          
+          <button onclick="loadManifest()" class="btn btn-accent" style="margin-bottom: 1rem;">Refresh Project Manifest</button>
+          
+          <div id="manifest-stats" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Click "Refresh Project Manifest" to calculate project memory.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Compact Token Context (for AI Prompts)</h2>
+            <button onclick="copyOutput('manifest-compact')" class="btn btn-secondary" style="padding: 0.3rem 0.7rem; font-size: 0.75rem;">Copy AI Context</button>
+          </div>
+          <div id="manifest-compact" class="output-box">Compact context string will appear here for one-click copying into AI chats.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terminal Live Log Feed -->
+    <div class="terminal-container">
+      <div class="terminal-header">
+        <span>VEYRA EVENT STREAM & AUDIT LOG</span>
+        <span>Engineered by Muhammad Talha Farid</span>
+      </div>
+      <div id="event-log" class="terminal-body">[SYSTEM] Veyra One-Man Army Studio loaded. All engines ready.</div>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+      
+      event.currentTarget.classList.add('active');
+      document.getElementById('panel-' + tabId).classList.add('active');
+      log('Switched to ' + tabId + ' view.');
+
+      if (tabId === 'db') loadDbTables();
+      if (tabId === 'manifest') loadManifest();
+    }
+
+    async function runBrainstorm() {
+      const idea = document.getElementById('vibe-input').value.trim();
+      if (!idea) return alert('Please enter a vibe concept first!');
+      log('Brainstorming vibe: ' + idea.slice(0, 30) + '...');
+      
+      const res = await fetch('/api/brainstorm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idea })
+      });
+      const data = await res.json();
+      document.getElementById('brainstorm-output').textContent = JSON.stringify(data, null, 2);
+      log('Spec generation complete for ' + data.title);
+    }
+
+    async function runPlan() {
+      const task = document.getElementById('plan-input').value.trim();
+      if (!task) return alert('Please enter a feature to plan!');
+      log('Generating architectural plan: ' + task.slice(0, 30) + '...');
+      
+      const res = await fetch('/api/plan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ task })
+      });
+      const data = await res.json();
+      document.getElementById('plan-output').textContent = JSON.stringify(data, null, 2);
+      log('Architectural plan generated: ' + data.planTitle);
+    }
+
+    async function runDebug() {
+      const error = document.getElementById('debug-input').value.trim();
+      if (!error) return alert('Please enter an error message or stack trace!');
+      log('Diagnosing failure symptom...');
+      
+      const res = await fetch('/api/debug', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ error })
+      });
+      const data = await res.json();
+      document.getElementById('debug-output').textContent = JSON.stringify(data, null, 2);
+      log('Root cause isolated. Domain: ' + data.diagnostics.failureDomain);
+    }
+
+    async function triggerScaffold(type) {
+      const name = document.getElementById('scaffold-name').value.trim() || 'Veyra App';
+      log('Scaffolding ' + type + ' (' + name + ')...');
+      
+      const res = await fetch('/api/scaffold', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, name })
+      });
+      const data = await res.json();
+      document.getElementById('scaffold-result').textContent = data.message;
+      log(data.message);
+    }
+
+    async function runAudit() {
+      log('Running multi-vector test harness...');
+      const res = await fetch('/api/audit');
+      const data = await res.json();
+      document.getElementById('audit-output').textContent = JSON.stringify(data, null, 2);
+      log('QA Audit complete. Score: ' + data.score + '%');
+    }
+
+    async function runReview() {
+      log('Running Directive code review...');
+      const res = await fetch('/api/review');
+      const data = await res.json();
+      document.getElementById('audit-output').textContent = JSON.stringify(data, null, 2);
+      log('Directive review complete. Status: ' + data.status);
+    }
+
+    async function runGuard() {
+      log('Executing anti-mock guard check...');
+      const res = await fetch('/api/review');
+      const data = await res.json();
+      if (data.status === 'CLEAN') {
+        document.getElementById('audit-output').textContent = '✔ GUARD PASSED: Zero mock latency timers or TODO stubs detected!';
+        log('Guard check passed cleanly.');
+      } else {
+        document.getElementById('audit-output').textContent = JSON.stringify(data.findings, null, 2);
+        log('Guard flagged ' + data.findings.length + ' violations.');
+      }
+    }
+
+    async function loadDbTables() {
+      log('Fetching SQLite database tables...');
+      const res = await fetch('/api/db/tables');
+      const data = await res.json();
+      const select = document.getElementById('db-table-select');
+      select.innerHTML = '<option value="">-- Select a table --</option>';
+
+      if (data.error || !data.tables || data.tables.length === 0) {
+        document.getElementById('db-info').textContent = data.error || 'No SQLite database tables found.';
+        return;
+      }
+
+      document.getElementById('db-info').textContent = `DB: ${data.dbPath} (${data.tables.length} tables)`;
+      data.tables.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.name;
+        opt.textContent = `${t.name} (${t.rowsCount} rows)`;
+        select.appendChild(opt);
+      });
+    }
+
+    async function loadTableRows(tableName) {
+      if (!tableName) return;
+      log('Loading records for table: ' + tableName);
+      const res = await fetch('/api/db/table/' + encodeURIComponent(tableName));
+      const data = await res.json();
+      const table = document.getElementById('db-table-view');
+
+      if (!data.columns || data.columns.length === 0) {
+        table.innerHTML = '<thead><tr><th>No Columns</th></tr></thead><tbody><tr><td>Empty table structure.</td></tr></tbody>';
+        return;
+      }
+
+      // Build Header
+      const ths = data.columns.map(c => `<th>${c.name} <span style="font-size:0.7em; color:var(--text-muted);">${c.type}</span></th>`).join('');
+      let rowsHtml = '';
+
+      if (!data.rows || data.rows.length === 0) {
+        rowsHtml = `<tr><td colspan="${data.columns.length}" style="text-align:center; color:var(--text-muted); padding:1.5rem;">Table is empty (0 records).</td></tr>`;
+      } else {
+        rowsHtml = data.rows.map(r => {
+          const tds = data.columns.map(c => `<td>${escapeHtml(String(r[c.name] ?? 'NULL'))}</td>`).join('');
+          return `<tr>${tds}</tr>`;
+        }).join('');
+      }
+
+      table.innerHTML = `<thead><tr>${ths}</tr></thead><tbody>${rowsHtml}</tbody>`;
+    }
+
+    async function loadManifest() {
+      log('Loading Credit Economy project manifest...');
+      const res = await fetch('/api/manifest');
+      const data = await res.json();
+      const m = data.manifest;
+
+      document.getElementById('manifest-stats').innerHTML = `
+        <div style="display:flex; gap:1.5rem; margin-top:0.5rem;">
+          <div><strong style="color:var(--accent);">${m.summary.totalTables}</strong> DB Tables</div>
+          <div><strong style="color:var(--primary);">${m.summary.totalRoutes}</strong> API Routes</div>
+          <div><strong style="color:var(--success);">${m.summary.totalViews}</strong> Views/Screens</div>
+          <div><strong style="color:var(--warning);">${m.summary.primitivesCount}</strong> Active Primitives</div>
+        </div>
+      `;
+
+      document.getElementById('manifest-compact').textContent = data.compactContext;
+    }
+
+    async function triggerDeploy() {
+      log('Generating production deployment manifests...');
+      const res = await fetch('/api/deploy', { method: 'POST' });
+      const data = await res.json();
+      document.getElementById('deploy-result').textContent = data.message;
+      log(data.message);
+    }
+
+    function copyOutput(id) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text);
+      log('Copied output to clipboard.');
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function log(msg) {
+      const el = document.getElementById('event-log');
+      el.textContent += '\n[' + new Date().toLocaleTimeString() + '] ' + msg;
+      el.scrollTop = el.scrollHeight;
+    }
+  </script>
+</body>
+</html>

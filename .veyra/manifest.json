@@ -1,0 +1,121 @@
+{
+  "version": "1.0.0",
+  "author": "Muhammad Talha Farid",
+  "engine": "VEYRA Credit Economy Engine",
+  "generatedAt": "2026-09-12T08:01:17.646Z",
+  "summary": {
+    "totalTables": 4,
+    "totalRoutes": 8,
+    "totalViews": 4,
+    "primitivesCount": 5
+  },
+  "database": {
+    "tables": [
+      {
+        "name": "users",
+        "columns": [
+          "id",
+          "email",
+          "password_hash",
+          "role",
+          "created_at"
+        ],
+        "sourceFile": "VEYRA\\engines\\scaffolder.mjs"
+      },
+      {
+        "name": "items",
+        "columns": [
+          "id",
+          "user_id",
+          "title",
+          "status",
+          "created_at"
+        ],
+        "sourceFile": "VEYRA\\engines\\scaffolder.mjs"
+      },
+      {
+        "name": "data_points",
+        "columns": [
+          "id",
+          "key",
+          "value",
+          "updated_at"
+        ],
+        "sourceFile": "VEYRA\\engines\\scaffolder.mjs"
+      },
+      {
+        "name": "_veyra_migrations",
+        "columns": [
+          "id",
+          "name",
+          "applied_at"
+        ],
+        "sourceFile": "VEYRA\\primitives\\db.mjs"
+      }
+    ]
+  },
+  "api": {
+    "routes": [
+      {
+        "method": "GET",
+        "path": "/api/health",
+        "sourceFile": "VEYRA\\engines\\scaffolder.mjs"
+      },
+      {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "sourceFile": "VEYRA\\engines\\scaffolder.mjs"
+      },
+      {
+        "method": "POST",
+        "path": "/api/auth/login",
+        "sourceFile": "VEYRA\\engines\\scaffolder.mjs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/records",
+        "sourceFile": "VEYRA\\engines\\scaffolder.mjs"
+      },
+      {
+        "method": "POST",
+        "path": "/api/records",
+        "sourceFile": "VEYRA\\engines\\scaffolder.mjs"
+      },
+      {
+        "method": "DELETE",
+        "path": "/api/records/:id",
+        "sourceFile": "VEYRA\\engines\\scaffolder.mjs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/data",
+        "sourceFile": "VEYRA\\engines\\scaffolder.mjs"
+      },
+      {
+        "method": "POST",
+        "path": "/api/data",
+        "sourceFile": "VEYRA\\engines\\scaffolder.mjs"
+      }
+    ]
+  },
+  "environment": {
+    "variables": [
+      "NODE_ENV",
+      "PORT",
+      "JWT_SECRET"
+    ]
+  },
+  "views": [
+    "dist\\index.html",
+    "index.html",
+    "VEYRA\\primitives\\components.html",
+    "VEYRA\\studio\\index.html"
+  ],
+  "primitives": [
+    "VeyraAuth",
+    "VeyraDB",
+    "VeyraRouter",
+    "VeyraPayments",
+    "VeyraReactive"
+  ]
+}

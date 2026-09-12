@@ -1,0 +1,21 @@
+services:
+  app:
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - JWT_SECRET=${JWT_SECRET:-change_in_production_vault}
+    volumes:
+      - app_data:/app
+    networks:
+      - veyra_net
+
+volumes:
+  app_data:
+
+networks:
+  veyra_net:
+    driver: bridge
